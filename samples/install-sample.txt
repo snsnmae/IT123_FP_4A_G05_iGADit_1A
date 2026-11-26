@@ -1,0 +1,837 @@
+==========================================================
+  iGADit — Server Provisioning & Deployment Script
+  IT 123 Final Project | Option 1A
+==========================================================
+
+[1/7] Installing server platform packages...
+      Package lists updated.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+git is already the newest version (1:2.43.0-1ubuntu7.4).
+git set to manually installed.
+curl is already the newest version (8.5.0-2ubuntu10.16).
+curl set to manually installed.
+The following additional packages will be installed:
+  apache2-bin apache2-data apache2-utils libapr1t64 libaprutil1-dbd-sqlite3
+  libaprutil1-ldap libaprutil1t64 libcgi-fast-perl libcgi-pm-perl
+  libclone-perl libencode-locale-perl libevent-pthreads-2.1-7t64 libfcgi-bin
+  libfcgi-perl libfcgi0t64 libhtml-parser-perl libhtml-tagset-perl
+  libhtml-template-perl libhttp-date-perl libhttp-message-perl libio-html-perl
+  liblua5.4-0 liblwp-mediatypes-perl libmecab2 libprotobuf-lite32t64
+  libtimedate-perl liburi-perl libzip4t64 mecab-ipadic mecab-ipadic-utf8
+  mecab-utils mysql-client-8.0 mysql-client-core-8.0 mysql-common
+  mysql-server-8.0 mysql-server-core-8.0 php-common php8.2-common
+  php8.2-opcache php8.2-readline ssl-cert
+Suggested packages:
+  apache2-doc apache2-suexec-pristine | apache2-suexec-custom www-browser
+  php-pear libdata-dump-perl libipc-sharedcache-perl
+  libio-compress-brotli-perl libbusiness-isbn-perl libregexp-ipv6-perl
+  libwww-perl mailx tinyca zip
+The following NEW packages will be installed:
+  apache2 apache2-bin apache2-data apache2-utils libapache2-mod-php8.2
+  libapr1t64 libaprutil1-dbd-sqlite3 libaprutil1-ldap libaprutil1t64
+  libcgi-fast-perl libcgi-pm-perl libclone-perl libencode-locale-perl
+  libevent-pthreads-2.1-7t64 libfcgi-bin libfcgi-perl libfcgi0t64
+  libhtml-parser-perl libhtml-tagset-perl libhtml-template-perl
+  libhttp-date-perl libhttp-message-perl libio-html-perl liblua5.4-0
+  liblwp-mediatypes-perl libmecab2 libprotobuf-lite32t64 libtimedate-perl
+  liburi-perl libzip4t64 mecab-ipadic mecab-ipadic-utf8 mecab-utils
+  mysql-client-8.0 mysql-client-core-8.0 mysql-common mysql-server
+  mysql-server-8.0 mysql-server-core-8.0 php-common php8.2 php8.2-bcmath
+  php8.2-cli php8.2-common php8.2-curl php8.2-mbstring php8.2-mysql
+  php8.2-opcache php8.2-readline php8.2-xml php8.2-zip ssl-cert unzip
+0 upgraded, 53 newly installed, 0 to remove and 30 not upgraded.
+Need to get 7,452 kB/37.7 MB of archives.
+After this operation, 275 MB of additional disk space will be used.
+Get:1 http://ph.archive.ubuntu.com/ubuntu noble-updates/main amd64 apache2-bin amd64 2.4.58-1ubuntu8.19 [1,339 kB]
+Get:2 https://ppa.launchpadcontent.net/ondrej/php/ubuntu noble/main amd64 php8.2-common amd64 8.2.36-2+ubuntu24.04.1+deb.sury.org+1 [738 kB]
+Get:3 http://ph.archive.ubuntu.com/ubuntu noble-updates/main amd64 apache2-data all 2.4.58-1ubuntu8.19 [163 kB]
+Get:4 http://ph.archive.ubuntu.com/ubuntu noble-updates/main amd64 apache2-utils amd64 2.4.58-1ubuntu8.19 [101 kB]
+Get:5 http://ph.archive.ubuntu.com/ubuntu noble-updates/main amd64 apache2 amd64 2.4.58-1ubuntu8.19 [90.2 kB]
+Get:6 https://ppa.launchpadcontent.net/ondrej/php/ubuntu noble/main amd64 php8.2-opcache amd64 8.2.36-2+ubuntu24.04.1+deb.sury.org+1 [373 kB]
+Get:7 https://ppa.launchpadcontent.net/ondrej/php/ubuntu noble/main amd64 php8.2-readline amd64 8.2.36-2+ubuntu24.04.1+deb.sury.org+1 [13.6 kB]
+Get:8 https://ppa.launchpadcontent.net/ondrej/php/ubuntu noble/main amd64 php8.2-cli amd64 8.2.36-2+ubuntu24.04.1+deb.sury.org+1 [1,901 kB]
+Get:9 https://ppa.launchpadcontent.net/ondrej/php/ubuntu noble/main amd64 libapache2-mod-php8.2 amd64 8.2.36-2+ubuntu24.04.1+deb.sury.org+1 [1,837 kB]
+Get:10 https://ppa.launchpadcontent.net/ondrej/php/ubuntu noble/main amd64 php8.2 all 8.2.36-2+ubuntu24.04.1+deb.sury.org+1 [53.0 kB]
+Get:11 https://ppa.launchpadcontent.net/ondrej/php/ubuntu noble/main amd64 php8.2-bcmath amd64 8.2.36-2+ubuntu24.04.1+deb.sury.org+1 [16.3 kB]
+Get:12 https://ppa.launchpadcontent.net/ondrej/php/ubuntu noble/main amd64 php8.2-curl amd64 8.2.36-2+ubuntu24.04.1+deb.sury.org+1 [39.4 kB]
+Get:13 https://ppa.launchpadcontent.net/ondrej/php/ubuntu noble/main amd64 php8.2-mbstring amd64 8.2.36-2+ubuntu24.04.1+deb.sury.org+1 [509 kB]
+Get:14 https://ppa.launchpadcontent.net/ondrej/php/ubuntu noble/main amd64 php8.2-mysql amd64 8.2.36-2+ubuntu24.04.1+deb.sury.org+1 [127 kB]
+Get:15 https://ppa.launchpadcontent.net/ondrej/php/ubuntu noble/main amd64 php8.2-xml amd64 8.2.36-2+ubuntu24.04.1+deb.sury.org+1 [123 kB]
+Get:16 https://ppa.launchpadcontent.net/ondrej/php/ubuntu noble/main amd64 php8.2-zip amd64 8.2.36-2+ubuntu24.04.1+deb.sury.org+1 [28.6 kB]
+Preconfiguring packages ...
+Fetched 7,452 kB in 5s (1,511 kB/s)
+Selecting previously unselected package libapr1t64:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 88517 files and directories currently installed.)
+Preparing to unpack .../00-libapr1t64_1.7.2-3.1ubuntu0.1_amd64.deb ...
+Unpacking libapr1t64:amd64 (1.7.2-3.1ubuntu0.1) ...
+Selecting previously unselected package libaprutil1t64:amd64.
+Preparing to unpack .../01-libaprutil1t64_1.6.3-1.1ubuntu7.1_amd64.deb ...
+Unpacking libaprutil1t64:amd64 (1.6.3-1.1ubuntu7.1) ...
+Selecting previously unselected package libaprutil1-dbd-sqlite3:amd64.
+Preparing to unpack .../02-libaprutil1-dbd-sqlite3_1.6.3-1.1ubuntu7.1_amd64.deb ...
+Unpacking libaprutil1-dbd-sqlite3:amd64 (1.6.3-1.1ubuntu7.1) ...
+Selecting previously unselected package libaprutil1-ldap:amd64.
+Preparing to unpack .../03-libaprutil1-ldap_1.6.3-1.1ubuntu7.1_amd64.deb ...
+Unpacking libaprutil1-ldap:amd64 (1.6.3-1.1ubuntu7.1) ...
+Selecting previously unselected package liblua5.4-0:amd64.
+Preparing to unpack .../04-liblua5.4-0_5.4.6-3build2_amd64.deb ...
+Unpacking liblua5.4-0:amd64 (5.4.6-3build2) ...
+Selecting previously unselected package apache2-bin.
+Preparing to unpack .../05-apache2-bin_2.4.58-1ubuntu8.19_amd64.deb ...
+Unpacking apache2-bin (2.4.58-1ubuntu8.19) ...
+Selecting previously unselected package apache2-data.
+Preparing to unpack .../06-apache2-data_2.4.58-1ubuntu8.19_all.deb ...
+Unpacking apache2-data (2.4.58-1ubuntu8.19) ...
+Selecting previously unselected package apache2-utils.
+Preparing to unpack .../07-apache2-utils_2.4.58-1ubuntu8.19_amd64.deb ...
+Unpacking apache2-utils (2.4.58-1ubuntu8.19) ...
+Selecting previously unselected package apache2.
+Preparing to unpack .../08-apache2_2.4.58-1ubuntu8.19_amd64.deb ...
+Unpacking apache2 (2.4.58-1ubuntu8.19) ...
+Selecting previously unselected package mysql-common.
+Preparing to unpack .../09-mysql-common_5.8+1.1.0build1_all.deb ...
+Unpacking mysql-common (5.8+1.1.0build1) ...
+Selecting previously unselected package mysql-client-core-8.0.
+Preparing to unpack .../10-mysql-client-core-8.0_8.0.46-0ubuntu0.24.04.5_amd64.deb ...
+Unpacking mysql-client-core-8.0 (8.0.46-0ubuntu0.24.04.5) ...
+Selecting previously unselected package mysql-client-8.0.
+Preparing to unpack .../11-mysql-client-8.0_8.0.46-0ubuntu0.24.04.5_amd64.deb ...
+Unpacking mysql-client-8.0 (8.0.46-0ubuntu0.24.04.5) ...
+Selecting previously unselected package libevent-pthreads-2.1-7t64:amd64.
+Preparing to unpack .../12-libevent-pthreads-2.1-7t64_2.1.12-stable-9ubuntu2.2_amd64.deb ...
+Unpacking libevent-pthreads-2.1-7t64:amd64 (2.1.12-stable-9ubuntu2.2) ...
+Selecting previously unselected package libmecab2:amd64.
+Preparing to unpack .../13-libmecab2_0.996-14ubuntu4_amd64.deb ...
+Unpacking libmecab2:amd64 (0.996-14ubuntu4) ...
+Selecting previously unselected package libprotobuf-lite32t64:amd64.
+Preparing to unpack .../14-libprotobuf-lite32t64_3.21.12-8.2ubuntu0.4_amd64.deb ...
+Unpacking libprotobuf-lite32t64:amd64 (3.21.12-8.2ubuntu0.4) ...
+Selecting previously unselected package mysql-server-core-8.0.
+Preparing to unpack .../15-mysql-server-core-8.0_8.0.46-0ubuntu0.24.04.5_amd64.deb ...
+Unpacking mysql-server-core-8.0 (8.0.46-0ubuntu0.24.04.5) ...
+Setting up mysql-common (5.8+1.1.0build1) ...
+update-alternatives: using /etc/mysql/my.cnf.fallback to provide /etc/mysql/my.cnf (my.cnf) in auto mode
+Selecting previously unselected package mysql-server-8.0.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 89449 files and directories currently installed.)
+Preparing to unpack .../00-mysql-server-8.0_8.0.46-0ubuntu0.24.04.5_amd64.deb ...
+Unpacking mysql-server-8.0 (8.0.46-0ubuntu0.24.04.5) ...
+Selecting previously unselected package php-common.
+Preparing to unpack .../01-php-common_2%3a101~+ubuntu24.04.1+deb.sury.org+1_all.deb ...
+Unpacking php-common (2:101~+ubuntu24.04.1+deb.sury.org+1) ...
+Selecting previously unselected package php8.2-common.
+Preparing to unpack .../02-php8.2-common_8.2.36-2+ubuntu24.04.1+deb.sury.org+1_amd64.deb ...
+Unpacking php8.2-common (8.2.36-2+ubuntu24.04.1+deb.sury.org+1) ...
+Selecting previously unselected package php8.2-opcache.
+Preparing to unpack .../03-php8.2-opcache_8.2.36-2+ubuntu24.04.1+deb.sury.org+1_amd64.deb ...
+Unpacking php8.2-opcache (8.2.36-2+ubuntu24.04.1+deb.sury.org+1) ...
+Selecting previously unselected package php8.2-readline.
+Preparing to unpack .../04-php8.2-readline_8.2.36-2+ubuntu24.04.1+deb.sury.org+1_amd64.deb ...
+Unpacking php8.2-readline (8.2.36-2+ubuntu24.04.1+deb.sury.org+1) ...
+Selecting previously unselected package php8.2-cli.
+Preparing to unpack .../05-php8.2-cli_8.2.36-2+ubuntu24.04.1+deb.sury.org+1_amd64.deb ...
+Unpacking php8.2-cli (8.2.36-2+ubuntu24.04.1+deb.sury.org+1) ...
+Selecting previously unselected package libapache2-mod-php8.2.
+Preparing to unpack .../06-libapache2-mod-php8.2_8.2.36-2+ubuntu24.04.1+deb.sury.org+1_amd64.deb ...
+Unpacking libapache2-mod-php8.2 (8.2.36-2+ubuntu24.04.1+deb.sury.org+1) ...
+Selecting previously unselected package libhtml-tagset-perl.
+Preparing to unpack .../07-libhtml-tagset-perl_3.20-6_all.deb ...
+Unpacking libhtml-tagset-perl (3.20-6) ...
+Selecting previously unselected package liburi-perl.
+Preparing to unpack .../08-liburi-perl_5.27-1_all.deb ...
+Unpacking liburi-perl (5.27-1) ...
+Selecting previously unselected package libhtml-parser-perl:amd64.
+Preparing to unpack .../09-libhtml-parser-perl_3.81-1ubuntu0.1_amd64.deb ...
+Unpacking libhtml-parser-perl:amd64 (3.81-1ubuntu0.1) ...
+Selecting previously unselected package libcgi-pm-perl.
+Preparing to unpack .../10-libcgi-pm-perl_4.63-1_all.deb ...
+Unpacking libcgi-pm-perl (4.63-1) ...
+Selecting previously unselected package libfcgi0t64:amd64.
+Preparing to unpack .../11-libfcgi0t64_2.4.2-2.1ubuntu0.24.04.1_amd64.deb ...
+Unpacking libfcgi0t64:amd64 (2.4.2-2.1ubuntu0.24.04.1) ...
+Selecting previously unselected package libfcgi-perl.
+Preparing to unpack .../12-libfcgi-perl_0.82+ds-3build2_amd64.deb ...
+Unpacking libfcgi-perl (0.82+ds-3build2) ...
+Selecting previously unselected package libcgi-fast-perl.
+Preparing to unpack .../13-libcgi-fast-perl_1%3a2.17-1_all.deb ...
+Unpacking libcgi-fast-perl (1:2.17-1) ...
+Selecting previously unselected package libclone-perl:amd64.
+Preparing to unpack .../14-libclone-perl_0.46-1build3_amd64.deb ...
+Unpacking libclone-perl:amd64 (0.46-1build3) ...
+Selecting previously unselected package libencode-locale-perl.
+Preparing to unpack .../15-libencode-locale-perl_1.05-3_all.deb ...
+Unpacking libencode-locale-perl (1.05-3) ...
+Selecting previously unselected package libfcgi-bin.
+Preparing to unpack .../16-libfcgi-bin_2.4.2-2.1ubuntu0.24.04.1_amd64.deb ...
+Unpacking libfcgi-bin (2.4.2-2.1ubuntu0.24.04.1) ...
+Selecting previously unselected package libhtml-template-perl.
+Preparing to unpack .../17-libhtml-template-perl_2.97-2_all.deb ...
+Unpacking libhtml-template-perl (2.97-2) ...
+Selecting previously unselected package libtimedate-perl.
+Preparing to unpack .../18-libtimedate-perl_2.3300-2_all.deb ...
+Unpacking libtimedate-perl (2.3300-2) ...
+Selecting previously unselected package libhttp-date-perl.
+Preparing to unpack .../19-libhttp-date-perl_6.06-1ubuntu0.24.04.1_all.deb ...
+Unpacking libhttp-date-perl (6.06-1ubuntu0.24.04.1) ...
+Selecting previously unselected package libio-html-perl.
+Preparing to unpack .../20-libio-html-perl_1.004-3_all.deb ...
+Unpacking libio-html-perl (1.004-3) ...
+Selecting previously unselected package liblwp-mediatypes-perl.
+Preparing to unpack .../21-liblwp-mediatypes-perl_6.04-2_all.deb ...
+Unpacking liblwp-mediatypes-perl (6.04-2) ...
+Selecting previously unselected package libhttp-message-perl.
+Preparing to unpack .../22-libhttp-message-perl_6.45-1ubuntu1_all.deb ...
+Unpacking libhttp-message-perl (6.45-1ubuntu1) ...
+Selecting previously unselected package libzip4t64:amd64.
+Preparing to unpack .../23-libzip4t64_1.7.3-1.1ubuntu2_amd64.deb ...
+Unpacking libzip4t64:amd64 (1.7.3-1.1ubuntu2) ...
+Selecting previously unselected package mecab-utils.
+Preparing to unpack .../24-mecab-utils_0.996-14ubuntu4_amd64.deb ...
+Unpacking mecab-utils (0.996-14ubuntu4) ...
+Selecting previously unselected package mecab-ipadic.
+Preparing to unpack .../25-mecab-ipadic_2.7.0-20070801+main-3_all.deb ...
+Unpacking mecab-ipadic (2.7.0-20070801+main-3) ...
+Selecting previously unselected package mecab-ipadic-utf8.
+Preparing to unpack .../26-mecab-ipadic-utf8_2.7.0-20070801+main-3_all.deb ...
+Unpacking mecab-ipadic-utf8 (2.7.0-20070801+main-3) ...
+Selecting previously unselected package mysql-server.
+Preparing to unpack .../27-mysql-server_8.0.46-0ubuntu0.24.04.5_all.deb ...
+Unpacking mysql-server (8.0.46-0ubuntu0.24.04.5) ...
+Selecting previously unselected package php8.2.
+Preparing to unpack .../28-php8.2_8.2.36-2+ubuntu24.04.1+deb.sury.org+1_all.deb ...
+Unpacking php8.2 (8.2.36-2+ubuntu24.04.1+deb.sury.org+1) ...
+Selecting previously unselected package php8.2-bcmath.
+Preparing to unpack .../29-php8.2-bcmath_8.2.36-2+ubuntu24.04.1+deb.sury.org+1_amd64.deb ...
+Unpacking php8.2-bcmath (8.2.36-2+ubuntu24.04.1+deb.sury.org+1) ...
+Selecting previously unselected package php8.2-curl.
+Preparing to unpack .../30-php8.2-curl_8.2.36-2+ubuntu24.04.1+deb.sury.org+1_amd64.deb ...
+Unpacking php8.2-curl (8.2.36-2+ubuntu24.04.1+deb.sury.org+1) ...
+Selecting previously unselected package php8.2-mbstring.
+Preparing to unpack .../31-php8.2-mbstring_8.2.36-2+ubuntu24.04.1+deb.sury.org+1_amd64.deb ...
+Unpacking php8.2-mbstring (8.2.36-2+ubuntu24.04.1+deb.sury.org+1) ...
+Selecting previously unselected package php8.2-mysql.
+Preparing to unpack .../32-php8.2-mysql_8.2.36-2+ubuntu24.04.1+deb.sury.org+1_amd64.deb ...
+Unpacking php8.2-mysql (8.2.36-2+ubuntu24.04.1+deb.sury.org+1) ...
+Selecting previously unselected package php8.2-xml.
+Preparing to unpack .../33-php8.2-xml_8.2.36-2+ubuntu24.04.1+deb.sury.org+1_amd64.deb ...
+Unpacking php8.2-xml (8.2.36-2+ubuntu24.04.1+deb.sury.org+1) ...
+Selecting previously unselected package php8.2-zip.
+Preparing to unpack .../34-php8.2-zip_8.2.36-2+ubuntu24.04.1+deb.sury.org+1_amd64.deb ...
+Unpacking php8.2-zip (8.2.36-2+ubuntu24.04.1+deb.sury.org+1) ...
+Selecting previously unselected package ssl-cert.
+Preparing to unpack .../35-ssl-cert_1.1.2ubuntu1_all.deb ...
+Unpacking ssl-cert (1.1.2ubuntu1) ...
+Selecting previously unselected package unzip.
+Preparing to unpack .../36-unzip_6.0-28ubuntu4.1_amd64.deb ...
+Unpacking unzip (6.0-28ubuntu4.1) ...
+Setting up libprotobuf-lite32t64:amd64 (3.21.12-8.2ubuntu0.4) ...
+Setting up php-common (2:101~+ubuntu24.04.1+deb.sury.org+1) ...
+Created symlink /etc/systemd/system/timers.target.wants/phpsessionclean.timer → /usr/lib/systemd/system/phpsessionclean.timer.
+Setting up libmecab2:amd64 (0.996-14ubuntu4) ...
+Setting up php8.2-common (8.2.36-2+ubuntu24.04.1+deb.sury.org+1) ...
+
+Creating config file /etc/php/8.2/mods-available/calendar.ini with new version
+
+Creating config file /etc/php/8.2/mods-available/ctype.ini with new version
+
+Creating config file /etc/php/8.2/mods-available/exif.ini with new version
+
+Creating config file /etc/php/8.2/mods-available/fileinfo.ini with new version
+
+Creating config file /etc/php/8.2/mods-available/ffi.ini with new version
+
+Creating config file /etc/php/8.2/mods-available/ftp.ini with new version
+
+Creating config file /etc/php/8.2/mods-available/gettext.ini with new version
+
+Creating config file /etc/php/8.2/mods-available/iconv.ini with new version
+
+Creating config file /etc/php/8.2/mods-available/pdo.ini with new version
+
+Creating config file /etc/php/8.2/mods-available/phar.ini with new version
+
+Creating config file /etc/php/8.2/mods-available/posix.ini with new version
+
+Creating config file /etc/php/8.2/mods-available/shmop.ini with new version
+
+Creating config file /etc/php/8.2/mods-available/sockets.ini with new version
+
+Creating config file /etc/php/8.2/mods-available/sysvmsg.ini with new version
+
+Creating config file /etc/php/8.2/mods-available/sysvsem.ini with new version
+
+Creating config file /etc/php/8.2/mods-available/sysvshm.ini with new version
+
+Creating config file /etc/php/8.2/mods-available/tokenizer.ini with new version
+Setting up mysql-client-core-8.0 (8.0.46-0ubuntu0.24.04.5) ...
+Setting up php8.2-mysql (8.2.36-2+ubuntu24.04.1+deb.sury.org+1) ...
+
+Creating config file /etc/php/8.2/mods-available/mysqlnd.ini with new version
+
+Creating config file /etc/php/8.2/mods-available/mysqli.ini with new version
+
+Creating config file /etc/php/8.2/mods-available/pdo_mysql.ini with new version
+Setting up php8.2-bcmath (8.2.36-2+ubuntu24.04.1+deb.sury.org+1) ...
+
+Creating config file /etc/php/8.2/mods-available/bcmath.ini with new version
+Setting up libclone-perl:amd64 (0.46-1build3) ...
+Setting up libevent-pthreads-2.1-7t64:amd64 (2.1.12-stable-9ubuntu2.2) ...
+Setting up libfcgi0t64:amd64 (2.4.2-2.1ubuntu0.24.04.1) ...
+Setting up php8.2-opcache (8.2.36-2+ubuntu24.04.1+deb.sury.org+1) ...
+
+Creating config file /etc/php/8.2/mods-available/opcache.ini with new version
+Setting up libhtml-tagset-perl (3.20-6) ...
+Setting up unzip (6.0-28ubuntu4.1) ...
+Setting up php8.2-readline (8.2.36-2+ubuntu24.04.1+deb.sury.org+1) ...
+
+Creating config file /etc/php/8.2/mods-available/readline.ini with new version
+Setting up php8.2-mbstring (8.2.36-2+ubuntu24.04.1+deb.sury.org+1) ...
+
+Creating config file /etc/php/8.2/mods-available/mbstring.ini with new version
+Setting up liblwp-mediatypes-perl (6.04-2) ...
+Setting up libfcgi-bin (2.4.2-2.1ubuntu0.24.04.1) ...
+Setting up libencode-locale-perl (1.05-3) ...
+Setting up php8.2-curl (8.2.36-2+ubuntu24.04.1+deb.sury.org+1) ...
+
+Creating config file /etc/php/8.2/mods-available/curl.ini with new version
+Setting up ssl-cert (1.1.2ubuntu1) ...
+Created symlink /etc/systemd/system/multi-user.target.wants/ssl-cert.service → /usr/lib/systemd/system/ssl-cert.service.
+Setting up php8.2-xml (8.2.36-2+ubuntu24.04.1+deb.sury.org+1) ...
+
+Creating config file /etc/php/8.2/mods-available/dom.ini with new version
+
+Creating config file /etc/php/8.2/mods-available/simplexml.ini with new version
+
+Creating config file /etc/php/8.2/mods-available/xml.ini with new version
+
+Creating config file /etc/php/8.2/mods-available/xmlreader.ini with new version
+
+Creating config file /etc/php/8.2/mods-available/xmlwriter.ini with new version
+
+Creating config file /etc/php/8.2/mods-available/xsl.ini with new version
+Setting up mecab-utils (0.996-14ubuntu4) ...
+Setting up libio-html-perl (1.004-3) ...
+Setting up mysql-server-core-8.0 (8.0.46-0ubuntu0.24.04.5) ...
+Setting up libtimedate-perl (2.3300-2) ...
+Setting up libapr1t64:amd64 (1.7.2-3.1ubuntu0.1) ...
+Setting up mysql-client-8.0 (8.0.46-0ubuntu0.24.04.5) ...
+Setting up libfcgi-perl (0.82+ds-3build2) ...
+Setting up liblua5.4-0:amd64 (5.4.6-3build2) ...
+Setting up apache2-data (2.4.58-1ubuntu8.19) ...
+Setting up php8.2-cli (8.2.36-2+ubuntu24.04.1+deb.sury.org+1) ...
+update-alternatives: using /usr/bin/php8.2 to provide /usr/bin/php (php) in auto mode
+update-alternatives: using /usr/bin/phar8.2 to provide /usr/bin/phar (phar) in auto mode
+update-alternatives: using /usr/bin/phar.phar8.2 to provide /usr/bin/phar.phar (phar.phar) in auto mode
+
+Creating config file /etc/php/8.2/cli/php.ini with new version
+Setting up libzip4t64:amd64 (1.7.3-1.1ubuntu2) ...
+Setting up liburi-perl (5.27-1) ...
+Setting up mysql-server-8.0 (8.0.46-0ubuntu0.24.04.5) ...
+update-alternatives: using /etc/mysql/mysql.cnf to provide /etc/mysql/my.cnf (my.cnf) in auto mode
+Renaming removed key_buffer and myisam-recover options (if present)
+mysqld will log errors to /var/log/mysql/error.log
+mysqld is running as pid 10932
+Created symlink /etc/systemd/system/multi-user.target.wants/mysql.service → /usr/lib/systemd/system/mysql.service.
+Setting up libaprutil1t64:amd64 (1.6.3-1.1ubuntu7.1) ...
+Setting up libhttp-date-perl (6.06-1ubuntu0.24.04.1) ...
+Setting up mecab-ipadic (2.7.0-20070801+main-3) ...
+Compiling IPA dictionary for Mecab.  This takes long time...
+reading /usr/share/mecab/dic/ipadic/unk.def ... 40
+emitting double-array:   9% |###                                        | emitting double-array:  18% |#######                                    | emitting double-array:  27% |###########                                | emitting double-array:  36% |###############                            | emitting double-array:  45% |###################                        | emitting double-array:  54% |#######################                    | emitting double-array:  63% |###########################                | emitting double-array:  72% |###############################            | emitting double-array:  81% |###################################        | emitting double-array:  90% |#######################################    | emitting double-array: 100% |###########################################| 
+/usr/share/mecab/dic/ipadic/model.def is not found. skipped.
+reading /usr/share/mecab/dic/ipadic/Noun.place.csv ... 72999
+reading /usr/share/mecab/dic/ipadic/Noun.adverbal.csv ... 795
+reading /usr/share/mecab/dic/ipadic/Noun.number.csv ... 42
+reading /usr/share/mecab/dic/ipadic/Conjunction.csv ... 171
+reading /usr/share/mecab/dic/ipadic/Adj.csv ... 27210
+reading /usr/share/mecab/dic/ipadic/Adnominal.csv ... 135
+reading /usr/share/mecab/dic/ipadic/Postp.csv ... 146
+reading /usr/share/mecab/dic/ipadic/Prefix.csv ... 221
+reading /usr/share/mecab/dic/ipadic/Filler.csv ... 19
+reading /usr/share/mecab/dic/ipadic/Noun.csv ... 60477
+reading /usr/share/mecab/dic/ipadic/Noun.demonst.csv ... 120
+reading /usr/share/mecab/dic/ipadic/Noun.others.csv ... 151
+reading /usr/share/mecab/dic/ipadic/Symbol.csv ... 208
+reading /usr/share/mecab/dic/ipadic/Noun.org.csv ... 16668
+reading /usr/share/mecab/dic/ipadic/Auxil.csv ... 199
+reading /usr/share/mecab/dic/ipadic/Others.csv ... 2
+reading /usr/share/mecab/dic/ipadic/Verb.csv ... 130750
+reading /usr/share/mecab/dic/ipadic/Adverb.csv ... 3032
+reading /usr/share/mecab/dic/ipadic/Noun.proper.csv ... 27328
+reading /usr/share/mecab/dic/ipadic/Noun.adjv.csv ... 3328
+reading /usr/share/mecab/dic/ipadic/Noun.nai.csv ... 42
+reading /usr/share/mecab/dic/ipadic/Noun.verbal.csv ... 12146
+reading /usr/share/mecab/dic/ipadic/Interjection.csv ... 252
+reading /usr/share/mecab/dic/ipadic/Noun.name.csv ... 34202
+reading /usr/share/mecab/dic/ipadic/Suffix.csv ... 1393
+reading /usr/share/mecab/dic/ipadic/Postp-col.csv ... 91
+emitting double-array:   0% |                                           | emitting double-array:   1% |                                           | emitting double-array:   2% |                                           | emitting double-array:   3% |#                                          | emitting double-array:   4% |#                                          | emitting double-array:   5% |##                                         | emitting double-array:   6% |##                                         | emitting double-array:   7% |###                                        | emitting double-array:   8% |###                                        | emitting double-array:   9% |###                                        | emitting double-array:  10% |####                                       | emitting double-array:  11% |####                                       | emitting double-array:  12% |#####                                      | emitting double-array:  13% |#####                                      | emitting double-array:  14% |######                                     | emitting double-array:  15% |######                                     | emitting double-array:  16% |######                                     | emitting double-array:  17% |#######                                    | emitting double-array:  18% |#######                                    | emitting double-array:  19% |########                                   | emitting double-array:  20% |########                                   | emitting double-array:  21% |#########                                  | emitting double-array:  22% |#########                                  | emitting double-array:  23% |#########                                  | emitting double-array:  24% |##########                                 | emitting double-array:  25% |##########                                 | emitting double-array:  26% |###########                                | emitting double-array:  27% |###########                                | emitting double-array:  28% |############                               | emitting double-array:  29% |############                               | emitting double-array:  30% |############                               | emitting double-array:  31% |#############                              | emitting double-array:  32% |#############                              | emitting double-array:  33% |##############                             | emitting double-array:  34% |##############                             | emitting double-array:  35% |###############                            | emitting double-array:  36% |###############                            | emitting double-array:  37% |###############                            | emitting double-array:  38% |################                           | emitting double-array:  39% |################                           | emitting double-array:  40% |#################                          | emitting double-array:  41% |#################                          | emitting double-array:  42% |##################                         | emitting double-array:  43% |##################                         | emitting double-array:  44% |##################                         | emitting double-array:  45% |###################                        | emitting double-array:  46% |###################                        | emitting double-array:  47% |####################                       | emitting double-array:  48% |####################                       | emitting double-array:  49% |#####################                      | emitting double-array:  50% |#####################                      | emitting double-array:  51% |#####################                      | emitting double-array:  52% |######################                     | emitting double-array:  53% |######################                     | emitting double-array:  54% |#######################                    | emitting double-array:  55% |#######################                    | emitting double-array:  56% |########################                   | emitting double-array:  57% |########################                   | emitting double-array:  58% |########################                   | emitting double-array:  59% |#########################                  | emitting double-array:  60% |#########################                  | emitting double-array:  61% |##########################                 | emitting double-array:  62% |##########################                 | emitting double-array:  63% |###########################                | emitting double-array:  64% |###########################                | emitting double-array:  65% |###########################                | emitting double-array:  66% |############################               | emitting double-array:  67% |############################               | emitting double-array:  68% |#############################              | emitting double-array:  69% |#############################              | emitting double-array:  70% |##############################             | emitting double-array:  71% |##############################             | emitting double-array:  72% |##############################             | emitting double-array:  73% |###############################            | emitting double-array:  74% |###############################            | emitting double-array:  75% |################################           | emitting double-array:  76% |################################           | emitting double-array:  77% |#################################          | emitting double-array:  78% |#################################          | emitting double-array:  79% |#################################          | emitting double-array:  80% |##################################         | emitting double-array:  81% |##################################         | emitting double-array:  82% |###################################        | emitting double-array:  83% |###################################        | emitting double-array:  84% |####################################       | emitting double-array:  85% |####################################       | emitting double-array:  86% |####################################       | emitting double-array:  87% |#####################################      | emitting double-array:  88% |#####################################      | emitting double-array:  89% |######################################     | emitting double-array:  90% |######################################     | emitting double-array:  91% |#######################################    | emitting double-array:  92% |#######################################    | emitting double-array:  93% |#######################################    | emitting double-array:  94% |########################################   | emitting double-array:  95% |########################################   | emitting double-array:  96% |#########################################  | emitting double-array:  97% |#########################################  | emitting double-array:  98% |########################################## | emitting double-array:  99% |########################################## | emitting double-array: 100% |###########################################| 
+reading /usr/share/mecab/dic/ipadic/matrix.def ... 1316x1316
+emitting matrix      :   0% |                                           | emitting matrix      :   1% |                                           | emitting matrix      :   2% |                                           | emitting matrix      :   3% |#                                          | emitting matrix      :   4% |#                                          | emitting matrix      :   5% |##                                         | emitting matrix      :   6% |##                                         | emitting matrix      :   7% |###                                        | emitting matrix      :   8% |###                                        | emitting matrix      :   9% |###                                        | emitting matrix      :  10% |####                                       | emitting matrix      :  11% |####                                       | emitting matrix      :  12% |#####                                      | emitting matrix      :  13% |#####                                      | emitting matrix      :  14% |######                                     | emitting matrix      :  15% |######                                     | emitting matrix      :  16% |######                                     | emitting matrix      :  17% |#######                                    | emitting matrix      :  18% |#######                                    | emitting matrix      :  19% |########                                   | emitting matrix      :  20% |########                                   | emitting matrix      :  21% |#########                                  | emitting matrix      :  22% |#########                                  | emitting matrix      :  23% |#########                                  | emitting matrix      :  24% |##########                                 | emitting matrix      :  25% |##########                                 | emitting matrix      :  26% |###########                                | emitting matrix      :  27% |###########                                | emitting matrix      :  28% |############                               | emitting matrix      :  29% |############                               | emitting matrix      :  30% |############                               | emitting matrix      :  31% |#############                              | emitting matrix      :  32% |#############                              | emitting matrix      :  33% |##############                             | emitting matrix      :  34% |##############                             | emitting matrix      :  35% |###############                            | emitting matrix      :  36% |###############                            | emitting matrix      :  37% |###############                            | emitting matrix      :  38% |################                           | emitting matrix      :  39% |################                           | emitting matrix      :  40% |#################                          | emitting matrix      :  41% |#################                          | emitting matrix      :  42% |##################                         | emitting matrix      :  43% |##################                         | emitting matrix      :  44% |##################                         | emitting matrix      :  45% |###################                        | emitting matrix      :  46% |###################                        | emitting matrix      :  47% |####################                       | emitting matrix      :  48% |####################                       | emitting matrix      :  49% |#####################                      | emitting matrix      :  50% |#####################                      | emitting matrix      :  51% |#####################                      | emitting matrix      :  52% |######################                     | emitting matrix      :  53% |######################                     | emitting matrix      :  54% |#######################                    | emitting matrix      :  55% |#######################                    | emitting matrix      :  56% |########################                   | emitting matrix      :  57% |########################                   | emitting matrix      :  58% |########################                   | emitting matrix      :  59% |#########################                  | emitting matrix      :  60% |#########################                  | emitting matrix      :  61% |##########################                 | emitting matrix      :  62% |##########################                 | emitting matrix      :  63% |###########################                | emitting matrix      :  64% |###########################                | emitting matrix      :  65% |###########################                | emitting matrix      :  66% |############################               | emitting matrix      :  67% |############################               | emitting matrix      :  68% |#############################              | emitting matrix      :  69% |#############################              | emitting matrix      :  70% |##############################             | emitting matrix      :  71% |##############################             | emitting matrix      :  72% |##############################             | emitting matrix      :  73% |###############################            | emitting matrix      :  74% |###############################            | emitting matrix      :  75% |################################           | emitting matrix      :  76% |################################           | emitting matrix      :  77% |#################################          | emitting matrix      :  78% |#################################          | emitting matrix      :  79% |#################################          | emitting matrix      :  80% |##################################         | emitting matrix      :  81% |##################################         | emitting matrix      :  82% |###################################        | emitting matrix      :  83% |###################################        | emitting matrix      :  84% |####################################       | emitting matrix      :  85% |####################################       | emitting matrix      :  86% |####################################       | emitting matrix      :  87% |#####################################      | emitting matrix      :  88% |#####################################      | emitting matrix      :  89% |######################################     | emitting matrix      :  90% |######################################     | emitting matrix      :  91% |#######################################    | emitting matrix      :  92% |#######################################    | emitting matrix      :  93% |#######################################    | emitting matrix      :  94% |########################################   | emitting matrix      :  95% |########################################   | emitting matrix      :  96% |#########################################  | emitting matrix      :  97% |#########################################  | emitting matrix      :  98% |########################################## | emitting matrix      :  99% |########################################## | emitting matrix      : 100% |###########################################| 
+
+done!
+update-alternatives: using /var/lib/mecab/dic/ipadic to provide /var/lib/mecab/dic/debian (mecab-dictionary) in auto mode
+Setting up php8.2-zip (8.2.36-2+ubuntu24.04.1+deb.sury.org+1) ...
+
+Creating config file /etc/php/8.2/mods-available/zip.ini with new version
+Setting up libaprutil1-ldap:amd64 (1.6.3-1.1ubuntu7.1) ...
+Setting up libaprutil1-dbd-sqlite3:amd64 (1.6.3-1.1ubuntu7.1) ...
+Setting up mecab-ipadic-utf8 (2.7.0-20070801+main-3) ...
+Compiling IPA dictionary for Mecab.  This takes long time...
+reading /usr/share/mecab/dic/ipadic/unk.def ... 40
+emitting double-array:   9% |###                                        | emitting double-array:  18% |#######                                    | emitting double-array:  27% |###########                                | emitting double-array:  36% |###############                            | emitting double-array:  45% |###################                        | emitting double-array:  54% |#######################                    | emitting double-array:  63% |###########################                | emitting double-array:  72% |###############################            | emitting double-array:  81% |###################################        | emitting double-array:  90% |#######################################    | emitting double-array: 100% |###########################################| 
+/usr/share/mecab/dic/ipadic/model.def is not found. skipped.
+reading /usr/share/mecab/dic/ipadic/Noun.place.csv ... 72999
+reading /usr/share/mecab/dic/ipadic/Noun.adverbal.csv ... 795
+reading /usr/share/mecab/dic/ipadic/Noun.number.csv ... 42
+reading /usr/share/mecab/dic/ipadic/Conjunction.csv ... 171
+reading /usr/share/mecab/dic/ipadic/Adj.csv ... 27210
+reading /usr/share/mecab/dic/ipadic/Adnominal.csv ... 135
+reading /usr/share/mecab/dic/ipadic/Postp.csv ... 146
+reading /usr/share/mecab/dic/ipadic/Prefix.csv ... 221
+reading /usr/share/mecab/dic/ipadic/Filler.csv ... 19
+reading /usr/share/mecab/dic/ipadic/Noun.csv ... 60477
+reading /usr/share/mecab/dic/ipadic/Noun.demonst.csv ... 120
+reading /usr/share/mecab/dic/ipadic/Noun.others.csv ... 151
+reading /usr/share/mecab/dic/ipadic/Symbol.csv ... 208
+reading /usr/share/mecab/dic/ipadic/Noun.org.csv ... 16668
+reading /usr/share/mecab/dic/ipadic/Auxil.csv ... 199
+reading /usr/share/mecab/dic/ipadic/Others.csv ... 2
+reading /usr/share/mecab/dic/ipadic/Verb.csv ... 130750
+reading /usr/share/mecab/dic/ipadic/Adverb.csv ... 3032
+reading /usr/share/mecab/dic/ipadic/Noun.proper.csv ... 27328
+reading /usr/share/mecab/dic/ipadic/Noun.adjv.csv ... 3328
+reading /usr/share/mecab/dic/ipadic/Noun.nai.csv ... 42
+reading /usr/share/mecab/dic/ipadic/Noun.verbal.csv ... 12146
+reading /usr/share/mecab/dic/ipadic/Interjection.csv ... 252
+reading /usr/share/mecab/dic/ipadic/Noun.name.csv ... 34202
+reading /usr/share/mecab/dic/ipadic/Suffix.csv ... 1393
+reading /usr/share/mecab/dic/ipadic/Postp-col.csv ... 91
+emitting double-array:   0% |                                           | emitting double-array:   1% |                                           | emitting double-array:   2% |                                           | emitting double-array:   3% |#                                          | emitting double-array:   4% |#                                          | emitting double-array:   5% |##                                         | emitting double-array:   6% |##                                         | emitting double-array:   7% |###                                        | emitting double-array:   8% |###                                        | emitting double-array:   9% |###                                        | emitting double-array:  10% |####                                       | emitting double-array:  11% |####                                       | emitting double-array:  12% |#####                                      | emitting double-array:  13% |#####                                      | emitting double-array:  14% |######                                     | emitting double-array:  15% |######                                     | emitting double-array:  16% |######                                     | emitting double-array:  17% |#######                                    | emitting double-array:  18% |#######                                    | emitting double-array:  19% |########                                   | emitting double-array:  20% |########                                   | emitting double-array:  21% |#########                                  | emitting double-array:  22% |#########                                  | emitting double-array:  23% |#########                                  | emitting double-array:  24% |##########                                 | emitting double-array:  25% |##########                                 | emitting double-array:  26% |###########                                | emitting double-array:  27% |###########                                | emitting double-array:  28% |############                               | emitting double-array:  29% |############                               | emitting double-array:  30% |############                               | emitting double-array:  31% |#############                              | emitting double-array:  32% |#############                              | emitting double-array:  33% |##############                             | emitting double-array:  34% |##############                             | emitting double-array:  35% |###############                            | emitting double-array:  36% |###############                            | emitting double-array:  37% |###############                            | emitting double-array:  38% |################                           | emitting double-array:  39% |################                           | emitting double-array:  40% |#################                          | emitting double-array:  41% |#################                          | emitting double-array:  42% |##################                         | emitting double-array:  43% |##################                         | emitting double-array:  44% |##################                         | emitting double-array:  45% |###################                        | emitting double-array:  46% |###################                        | emitting double-array:  47% |####################                       | emitting double-array:  48% |####################                       | emitting double-array:  49% |#####################                      | emitting double-array:  50% |#####################                      | emitting double-array:  51% |#####################                      | emitting double-array:  52% |######################                     | emitting double-array:  53% |######################                     | emitting double-array:  54% |#######################                    | emitting double-array:  55% |#######################                    | emitting double-array:  56% |########################                   | emitting double-array:  57% |########################                   | emitting double-array:  58% |########################                   | emitting double-array:  59% |#########################                  | emitting double-array:  60% |#########################                  | emitting double-array:  61% |##########################                 | emitting double-array:  62% |##########################                 | emitting double-array:  63% |###########################                | emitting double-array:  64% |###########################                | emitting double-array:  65% |###########################                | emitting double-array:  66% |############################               | emitting double-array:  67% |############################               | emitting double-array:  68% |#############################              | emitting double-array:  69% |#############################              | emitting double-array:  70% |##############################             | emitting double-array:  71% |##############################             | emitting double-array:  72% |##############################             | emitting double-array:  73% |###############################            | emitting double-array:  74% |###############################            | emitting double-array:  75% |################################           | emitting double-array:  76% |################################           | emitting double-array:  77% |#################################          | emitting double-array:  78% |#################################          | emitting double-array:  79% |#################################          | emitting double-array:  80% |##################################         | emitting double-array:  81% |##################################         | emitting double-array:  82% |###################################        | emitting double-array:  83% |###################################        | emitting double-array:  84% |####################################       | emitting double-array:  85% |####################################       | emitting double-array:  86% |####################################       | emitting double-array:  87% |#####################################      | emitting double-array:  88% |#####################################      | emitting double-array:  89% |######################################     | emitting double-array:  90% |######################################     | emitting double-array:  91% |#######################################    | emitting double-array:  92% |#######################################    | emitting double-array:  93% |#######################################    | emitting double-array:  94% |########################################   | emitting double-array:  95% |########################################   | emitting double-array:  96% |#########################################  | emitting double-array:  97% |#########################################  | emitting double-array:  98% |########################################## | emitting double-array:  99% |########################################## | emitting double-array: 100% |###########################################| 
+reading /usr/share/mecab/dic/ipadic/matrix.def ... 1316x1316
+emitting matrix      :   0% |                                           | emitting matrix      :   1% |                                           | emitting matrix      :   2% |                                           | emitting matrix      :   3% |#                                          | emitting matrix      :   4% |#                                          | emitting matrix      :   5% |##                                         | emitting matrix      :   6% |##                                         | emitting matrix      :   7% |###                                        | emitting matrix      :   8% |###                                        | emitting matrix      :   9% |###                                        | emitting matrix      :  10% |####                                       | emitting matrix      :  11% |####                                       | emitting matrix      :  12% |#####                                      | emitting matrix      :  13% |#####                                      | emitting matrix      :  14% |######                                     | emitting matrix      :  15% |######                                     | emitting matrix      :  16% |######                                     | emitting matrix      :  17% |#######                                    | emitting matrix      :  18% |#######                                    | emitting matrix      :  19% |########                                   | emitting matrix      :  20% |########                                   | emitting matrix      :  21% |#########                                  | emitting matrix      :  22% |#########                                  | emitting matrix      :  23% |#########                                  | emitting matrix      :  24% |##########                                 | emitting matrix      :  25% |##########                                 | emitting matrix      :  26% |###########                                | emitting matrix      :  27% |###########                                | emitting matrix      :  28% |############                               | emitting matrix      :  29% |############                               | emitting matrix      :  30% |############                               | emitting matrix      :  31% |#############                              | emitting matrix      :  32% |#############                              | emitting matrix      :  33% |##############                             | emitting matrix      :  34% |##############                             | emitting matrix      :  35% |###############                            | emitting matrix      :  36% |###############                            | emitting matrix      :  37% |###############                            | emitting matrix      :  38% |################                           | emitting matrix      :  39% |################                           | emitting matrix      :  40% |#################                          | emitting matrix      :  41% |#################                          | emitting matrix      :  42% |##################                         | emitting matrix      :  43% |##################                         | emitting matrix      :  44% |##################                         | emitting matrix      :  45% |###################                        | emitting matrix      :  46% |###################                        | emitting matrix      :  47% |####################                       | emitting matrix      :  48% |####################                       | emitting matrix      :  49% |#####################                      | emitting matrix      :  50% |#####################                      | emitting matrix      :  51% |#####################                      | emitting matrix      :  52% |######################                     | emitting matrix      :  53% |######################                     | emitting matrix      :  54% |#######################                    | emitting matrix      :  55% |#######################                    | emitting matrix      :  56% |########################                   | emitting matrix      :  57% |########################                   | emitting matrix      :  58% |########################                   | emitting matrix      :  59% |#########################                  | emitting matrix      :  60% |#########################                  | emitting matrix      :  61% |##########################                 | emitting matrix      :  62% |##########################                 | emitting matrix      :  63% |###########################                | emitting matrix      :  64% |###########################                | emitting matrix      :  65% |###########################                | emitting matrix      :  66% |############################               | emitting matrix      :  67% |############################               | emitting matrix      :  68% |#############################              | emitting matrix      :  69% |#############################              | emitting matrix      :  70% |##############################             | emitting matrix      :  71% |##############################             | emitting matrix      :  72% |##############################             | emitting matrix      :  73% |###############################            | emitting matrix      :  74% |###############################            | emitting matrix      :  75% |################################           | emitting matrix      :  76% |################################           | emitting matrix      :  77% |#################################          | emitting matrix      :  78% |#################################          | emitting matrix      :  79% |#################################          | emitting matrix      :  80% |##################################         | emitting matrix      :  81% |##################################         | emitting matrix      :  82% |###################################        | emitting matrix      :  83% |###################################        | emitting matrix      :  84% |####################################       | emitting matrix      :  85% |####################################       | emitting matrix      :  86% |####################################       | emitting matrix      :  87% |#####################################      | emitting matrix      :  88% |#####################################      | emitting matrix      :  89% |######################################     | emitting matrix      :  90% |######################################     | emitting matrix      :  91% |#######################################    | emitting matrix      :  92% |#######################################    | emitting matrix      :  93% |#######################################    | emitting matrix      :  94% |########################################   | emitting matrix      :  95% |########################################   | emitting matrix      :  96% |#########################################  | emitting matrix      :  97% |#########################################  | emitting matrix      :  98% |########################################## | emitting matrix      :  99% |########################################## | emitting matrix      : 100% |###########################################| 
+
+done!
+update-alternatives: using /var/lib/mecab/dic/ipadic-utf8 to provide /var/lib/mecab/dic/debian (mecab-dictionary) in auto mode
+Setting up libhtml-parser-perl:amd64 (3.81-1ubuntu0.1) ...
+Setting up libhttp-message-perl (6.45-1ubuntu1) ...
+Setting up apache2-utils (2.4.58-1ubuntu8.19) ...
+Setting up mysql-server (8.0.46-0ubuntu0.24.04.5) ...
+Setting up libcgi-pm-perl (4.63-1) ...
+Setting up apache2-bin (2.4.58-1ubuntu8.19) ...
+Setting up libhtml-template-perl (2.97-2) ...
+Setting up libapache2-mod-php8.2 (8.2.36-2+ubuntu24.04.1+deb.sury.org+1) ...
+Package apache2 is not configured yet. Will defer actions by package libapache2-mod-php8.2.
+
+Creating config file /etc/php/8.2/apache2/php.ini with new version
+No module matches 
+Setting up libcgi-fast-perl (1:2.17-1) ...
+Setting up apache2 (2.4.58-1ubuntu8.19) ...
+Enabling module mpm_event.
+Enabling module authz_core.
+Enabling module authz_host.
+Enabling module authn_core.
+Enabling module auth_basic.
+Enabling module access_compat.
+Enabling module authn_file.
+Enabling module authz_user.
+Enabling module alias.
+Enabling module dir.
+Enabling module autoindex.
+Enabling module env.
+Enabling module mime.
+Enabling module negotiation.
+Enabling module setenvif.
+Enabling module filter.
+Enabling module deflate.
+Enabling module status.
+Enabling module reqtimeout.
+Enabling conf charset.
+Enabling conf localized-error-pages.
+Enabling conf other-vhosts-access-log.
+Enabling conf security.
+Enabling conf serve-cgi-bin.
+Enabling site 000-default.
+info: Switch to mpm prefork for package libapache2-mod-php8.2
+Module mpm_event disabled.
+Enabling module mpm_prefork.
+info: Executing deferred 'a2enmod php8.2' for package libapache2-mod-php8.2
+Enabling module php8.2.
+Created symlink /etc/systemd/system/multi-user.target.wants/apache2.service → /usr/lib/systemd/system/apache2.service.
+Created symlink /etc/systemd/system/multi-user.target.wants/apache-htcacheclean.service → /usr/lib/systemd/system/apache-htcacheclean.service.
+Setting up php8.2 (8.2.36-2+ubuntu24.04.1+deb.sury.org+1) ...
+Processing triggers for ufw (0.36.2-6) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+Processing triggers for libc-bin (2.39-0ubuntu8.9) ...
+Processing triggers for php8.2-cli (8.2.36-2+ubuntu24.04.1+deb.sury.org+1) ...
+Processing triggers for libapache2-mod-php8.2 (8.2.36-2+ubuntu24.04.1+deb.sury.org+1) ...
+
+Running kernel seems to be up-to-date.
+
+No services need to be restarted.
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+      Installing Composer...
+All settings correct for using Composer
+Downloading...
+
+Composer (version 2.11.2) successfully installed to: /usr/local/bin/composer
+Use it: php /usr/local/bin/composer
+
+      Platform packages installed successfully.
+[2/7] Deploying application source files...
+      Extracting offline source bundle: /media/sf_scripts/igadit-bundle.tar.gz...
+      Source files ready in /var/www/html/igadit.
+[3/7] Setting up Apache VirtualHost configuration...
+      Apache VirtualHost enabled.
+[4/7] Provisioning MySQL database and user credentials...
+      Database 'igadit' and user 'igadit_user' ready.
+[5/7] Initializing Laravel environment...
+Composer plugins have been disabled for safety in this non-interactive session.
+Set COMPOSER_ALLOW_SUPERUSER=1 if you want to allow plugins to run as root/super user.
+Do not run Composer as root/super user! See https://getcomposer.org/root for details
+Installing dependencies from lock file
+Verifying lock file contents can be installed on current platform.
+Package operations: 92 installs, 0 updates, 0 removals
+  - Downloading aws/aws-crt-php (v1.2.7)
+  - Downloading carbonphp/carbon-doctrine-types (3.2.0)
+  - Downloading psr/log (3.0.2)
+  - Downloading psr/cache (3.0.0)
+  - Downloading doctrine/deprecations (1.1.6)
+  - Downloading doctrine/dbal (4.4.4)
+  - Downloading doctrine/inflector (2.1.0)
+  - Downloading doctrine/lexer (3.0.1)
+  - Downloading dragonmantank/cron-expression (v3.6.0)
+  - Downloading symfony/polyfill-mbstring (v1.38.2)
+  - Downloading symfony/deprecation-contracts (v3.7.1)
+  - Downloading symfony/http-foundation (v7.4.16)
+  - Downloading fruitcake/php-cors (v1.4.0)
+  - Downloading guzzlehttp/promises (2.5.2)
+  - Downloading symfony/polyfill-php80 (v1.37.0)
+  - Downloading guzzlehttp/uri-template (v1.0.10)
+  - Downloading symfony/polyfill-intl-normalizer (v1.38.0)
+  - Downloading symfony/polyfill-intl-grapheme (v1.41.0)
+  - Downloading symfony/polyfill-ctype (v1.37.0)
+  - Downloading symfony/string (v7.4.15)
+  - Downloading psr/container (2.0.2)
+  - Downloading symfony/service-contracts (v3.7.1)
+  - Downloading symfony/console (v7.4.16)
+  - Downloading laravel/prompts (v0.3.23)
+  - Downloading laravel/serializable-closure (v2.0.15)
+  - Downloading paragonie/random_compat (v9.99.100)
+  - Downloading paragonie/constant_time_encoding (v3.1.3)
+  - Downloading phpseclib/phpseclib (3.0.56)
+  - Downloading ralouphie/getallheaders (3.0.3)
+  - Downloading psr/http-message (2.0)
+  - Downloading psr/http-factory (1.1.0)
+  - Downloading guzzlehttp/psr7 (2.13.0)
+  - Downloading psr/http-client (1.0.3)
+  - Downloading guzzlehttp/guzzle (7.15.3)
+  - Downloading league/oauth1-client (v1.11.0)
+  - Downloading voku/portable-ascii (2.1.1)
+  - Downloading phpoption/phpoption (1.9.5)
+  - Downloading graham-campbell/result-type (v1.1.4)
+  - Downloading vlucas/phpdotenv (v5.6.4)
+  - Downloading symfony/css-selector (v7.4.9)
+  - Downloading tijsverkoyen/css-to-inline-styles (v2.4.0)
+  - Downloading symfony/var-dumper (v7.4.15)
+  - Downloading symfony/polyfill-uuid (v1.37.0)
+  - Downloading symfony/uid (v7.4.9)
+  - Downloading symfony/routing (v7.4.15)
+  - Downloading symfony/process (v7.4.13)
+  - Downloading symfony/polyfill-php85 (v1.41.0)
+  - Downloading symfony/polyfill-php84 (v1.38.1)
+  - Downloading symfony/polyfill-php83 (v1.41.0)
+  - Downloading symfony/polyfill-intl-idn (v1.38.1)
+  - Downloading symfony/mime (v7.4.16)
+  - Downloading psr/event-dispatcher (1.0.0)
+  - Downloading symfony/event-dispatcher-contracts (v3.7.1)
+  - Downloading symfony/event-dispatcher (v7.4.15)
+  - Downloading egulias/email-validator (4.0.4)
+  - Downloading symfony/mailer (v7.4.15)
+  - Downloading symfony/error-handler (v7.4.15)
+  - Downloading symfony/http-kernel (v7.4.16)
+  - Downloading symfony/finder (v7.4.14)
+  - Downloading ramsey/collection (2.1.1)
+  - Downloading brick/math (0.14.8)
+  - Downloading ramsey/uuid (4.9.3)
+  - Downloading psr/simple-cache (3.0.0)
+  - Downloading nunomaduro/termwind (v2.4.0)
+  - Downloading symfony/translation-contracts (v3.7.1)
+  - Downloading symfony/translation (v7.4.16)
+  - Downloading psr/clock (1.0.0)
+  - Downloading symfony/clock (v7.4.8)
+  - Downloading nesbot/carbon (3.13.2)
+  - Downloading monolog/monolog (3.10.0)
+  - Downloading league/uri-interfaces (7.8.1)
+  - Downloading league/uri (7.8.1)
+  - Downloading league/mime-type-detection (1.17.0)
+  - Downloading league/flysystem-local (3.31.0)
+  - Downloading league/flysystem (3.35.2)
+  - Downloading nette/utils (v4.1.5)
+  - Downloading nette/schema (v1.3.6)
+  - Downloading dflydev/dot-access-data (v3.0.3)
+  - Downloading league/config (v1.2.0)
+  - Downloading league/commonmark (2.10.0)
+  - Downloading laravel/framework (v12.67.0)
+  - Downloading firebase/php-jwt (v7.1.0)
+  - Downloading laravel/socialite (v5.30.0)
+  - Downloading nikic/php-parser (v5.8.0)
+  - Downloading psy/psysh (v0.12.24)
+  - Downloading laravel/tinker (v2.11.1)
+  - Downloading symfony/filesystem (v7.4.18)
+  - Downloading mtdowling/jmespath.php (2.9.2)
+  - Downloading aws/aws-sdk-php (3.398.1)
+  - Downloading league/flysystem-aws-s3-v3 (3.35.3)
+  - Downloading spatie/laravel-package-tools (1.93.1)
+  - Downloading spatie/laravel-honeypot (4.7.2)
+  0/92 [>---------------------------]   0%
+  5/92 [=>--------------------------]   5%
+ 11/92 [===>------------------------]  11%
+ 19/92 [=====>----------------------]  20%
+ 27/92 [========>-------------------]  29%
+ 29/92 [========>-------------------]  31%
+ 39/92 [===========>----------------]  42%
+ 47/92 [==============>-------------]  51%
+ 58/92 [=================>----------]  63%
+ 66/92 [====================>-------]  71%
+ 74/92 [======================>-----]  80%
+ 80/92 [========================>---]  86%
+ 85/92 [=========================>--]  92%
+ 89/92 [===========================>]  96%
+ 91/92 [===========================>]  98%
+ 92/92 [============================] 100%
+  - Installing aws/aws-crt-php (v1.2.7): Extracting archive
+  - Installing carbonphp/carbon-doctrine-types (3.2.0): Extracting archive
+  - Installing psr/log (3.0.2): Extracting archive
+  - Installing psr/cache (3.0.0): Extracting archive
+  - Installing doctrine/deprecations (1.1.6): Extracting archive
+  - Installing doctrine/dbal (4.4.4): Extracting archive
+  - Installing doctrine/inflector (2.1.0): Extracting archive
+  - Installing doctrine/lexer (3.0.1): Extracting archive
+  - Installing dragonmantank/cron-expression (v3.6.0): Extracting archive
+  - Installing symfony/polyfill-mbstring (v1.38.2): Extracting archive
+  - Installing symfony/deprecation-contracts (v3.7.1): Extracting archive
+  - Installing symfony/http-foundation (v7.4.16): Extracting archive
+  - Installing fruitcake/php-cors (v1.4.0): Extracting archive
+  - Installing guzzlehttp/promises (2.5.2): Extracting archive
+  - Installing symfony/polyfill-php80 (v1.37.0): Extracting archive
+  - Installing guzzlehttp/uri-template (v1.0.10): Extracting archive
+  - Installing symfony/polyfill-intl-normalizer (v1.38.0): Extracting archive
+  - Installing symfony/polyfill-intl-grapheme (v1.41.0): Extracting archive
+  - Installing symfony/polyfill-ctype (v1.37.0): Extracting archive
+  - Installing symfony/string (v7.4.15): Extracting archive
+  - Installing psr/container (2.0.2): Extracting archive
+  - Installing symfony/service-contracts (v3.7.1): Extracting archive
+  - Installing symfony/console (v7.4.16): Extracting archive
+  - Installing laravel/prompts (v0.3.23): Extracting archive
+  - Installing laravel/serializable-closure (v2.0.15): Extracting archive
+  - Installing paragonie/random_compat (v9.99.100): Extracting archive
+  - Installing paragonie/constant_time_encoding (v3.1.3): Extracting archive
+  - Installing phpseclib/phpseclib (3.0.56): Extracting archive
+  - Installing ralouphie/getallheaders (3.0.3): Extracting archive
+  - Installing psr/http-message (2.0): Extracting archive
+  - Installing psr/http-factory (1.1.0): Extracting archive
+  - Installing guzzlehttp/psr7 (2.13.0): Extracting archive
+  - Installing psr/http-client (1.0.3): Extracting archive
+  - Installing guzzlehttp/guzzle (7.15.3): Extracting archive
+  - Installing league/oauth1-client (v1.11.0): Extracting archive
+  - Installing voku/portable-ascii (2.1.1): Extracting archive
+  - Installing phpoption/phpoption (1.9.5): Extracting archive
+  - Installing graham-campbell/result-type (v1.1.4): Extracting archive
+  - Installing vlucas/phpdotenv (v5.6.4): Extracting archive
+  - Installing symfony/css-selector (v7.4.9): Extracting archive
+  - Installing tijsverkoyen/css-to-inline-styles (v2.4.0): Extracting archive
+  - Installing symfony/var-dumper (v7.4.15): Extracting archive
+  - Installing symfony/polyfill-uuid (v1.37.0): Extracting archive
+  - Installing symfony/uid (v7.4.9): Extracting archive
+  - Installing symfony/routing (v7.4.15): Extracting archive
+  - Installing symfony/process (v7.4.13): Extracting archive
+  - Installing symfony/polyfill-php85 (v1.41.0): Extracting archive
+  - Installing symfony/polyfill-php84 (v1.38.1): Extracting archive
+  - Installing symfony/polyfill-php83 (v1.41.0): Extracting archive
+  - Installing symfony/polyfill-intl-idn (v1.38.1): Extracting archive
+  - Installing symfony/mime (v7.4.16): Extracting archive
+  - Installing psr/event-dispatcher (1.0.0): Extracting archive
+  - Installing symfony/event-dispatcher-contracts (v3.7.1): Extracting archive
+  - Installing symfony/event-dispatcher (v7.4.15): Extracting archive
+  - Installing egulias/email-validator (4.0.4): Extracting archive
+  - Installing symfony/mailer (v7.4.15): Extracting archive
+  - Installing symfony/error-handler (v7.4.15): Extracting archive
+  - Installing symfony/http-kernel (v7.4.16): Extracting archive
+  - Installing symfony/finder (v7.4.14): Extracting archive
+  - Installing ramsey/collection (2.1.1): Extracting archive
+  - Installing brick/math (0.14.8): Extracting archive
+  - Installing ramsey/uuid (4.9.3): Extracting archive
+  - Installing psr/simple-cache (3.0.0): Extracting archive
+  - Installing nunomaduro/termwind (v2.4.0): Extracting archive
+  - Installing symfony/translation-contracts (v3.7.1): Extracting archive
+  - Installing symfony/translation (v7.4.16): Extracting archive
+  - Installing psr/clock (1.0.0): Extracting archive
+  - Installing symfony/clock (v7.4.8): Extracting archive
+  - Installing nesbot/carbon (3.13.2): Extracting archive
+  - Installing monolog/monolog (3.10.0): Extracting archive
+  - Installing league/uri-interfaces (7.8.1): Extracting archive
+  - Installing league/uri (7.8.1): Extracting archive
+  - Installing league/mime-type-detection (1.17.0): Extracting archive
+  - Installing league/flysystem-local (3.31.0): Extracting archive
+  - Installing league/flysystem (3.35.2): Extracting archive
+  - Installing nette/utils (v4.1.5): Extracting archive
+  - Installing nette/schema (v1.3.6): Extracting archive
+  - Installing dflydev/dot-access-data (v3.0.3): Extracting archive
+  - Installing league/config (v1.2.0): Extracting archive
+  - Installing league/commonmark (2.10.0): Extracting archive
+  - Installing laravel/framework (v12.67.0): Extracting archive
+  - Installing firebase/php-jwt (v7.1.0): Extracting archive
+  - Installing laravel/socialite (v5.30.0): Extracting archive
+  - Installing nikic/php-parser (v5.8.0): Extracting archive
+  - Installing psy/psysh (v0.12.24): Extracting archive
+  - Installing laravel/tinker (v2.11.1): Extracting archive
+  - Installing symfony/filesystem (v7.4.18): Extracting archive
+  - Installing mtdowling/jmespath.php (2.9.2): Extracting archive
+  - Installing aws/aws-sdk-php (3.398.1): Extracting archive
+  - Installing league/flysystem-aws-s3-v3 (3.35.3): Extracting archive
+  - Installing spatie/laravel-package-tools (1.93.1): Extracting archive
+  - Installing spatie/laravel-honeypot (4.7.2): Extracting archive
+  0/92 [>---------------------------]   0%
+ 18/92 [=====>----------------------]  19%
+ 20/92 [======>---------------------]  21%
+ 29/92 [========>-------------------]  31%
+ 40/92 [============>---------------]  43%
+ 50/92 [===============>------------]  54%
+ 58/92 [=================>----------]  63%
+ 65/92 [===================>--------]  70%
+ 74/92 [======================>-----]  80%
+ 87/92 [==========================>-]  94%
+ 92/92 [============================] 100%
+Generating optimized autoload files
+> Illuminate\Foundation\ComposerScripts::postAutoloadDump
+> @php artisan package:discover --ansi
+
+   INFO  Discovering packages.  
+
+  laravel/socialite ..................................................... DONE
+  laravel/tinker ........................................................ DONE
+  nesbot/carbon ......................................................... DONE
+  nunomaduro/termwind ................................................... DONE
+  spatie/laravel-honeypot ............................................... DONE
+
+58 packages you are using are looking for funding.
+Use the `composer fund` command to find out more!
+
+   INFO  Discovering packages.  
+
+  laravel/socialite ........................................................................................................................... DONE
+  laravel/tinker .............................................................................................................................. DONE
+  nesbot/carbon ............................................................................................................................... DONE
+  nunomaduro/termwind ......................................................................................................................... DONE
+  spatie/laravel-honeypot ..................................................................................................................... DONE
+
+
+   INFO  Application key set successfully.  
+
+
+   INFO  Preparing database.  
+
+  Creating migration table ........................................................................................................... 107.31ms DONE
+
+   INFO  Running migrations.  
+
+  0001_01_01_000000_create_roles_table ............................................................................................... 167.55ms DONE
+  0001_01_01_000001_create_user_statuses_table ....................................................................................... 149.64ms DONE
+  0001_01_01_000002_create_positions_table ........................................................................................... 154.30ms DONE
+  0001_01_01_000003_create_users_table ..................................................................................................... 1s DONE
+  0001_01_01_000004_create_cache_table ............................................................................................... 338.59ms DONE
+  0001_01_01_000005_create_jobs_table ................................................................................................ 390.70ms DONE
+  0001_01_01_000006_create_submitters_table ........................................................................................... 92.11ms DONE
+  0001_01_01_000008_create_categories_table .......................................................................................... 168.40ms DONE
+  0001_01_01_000009_create_directions_table .......................................................................................... 176.73ms DONE
+  0001_01_01_000011_create_notification_statuses_table ............................................................................... 174.78ms DONE
+  0001_01_01_000012_create_routing_statuses_table .................................................................................... 162.12ms DONE
+  0001_01_01_000013_create_files_table ................................................................................................ 88.13ms DONE
+  0001_01_01_000014_create_submission_statuses_table ................................................................................. 150.29ms DONE
+  0001_01_01_000015_create_documents_table ................................................................................................. 2s DONE
+  0001_01_01_000016_create_tags_table ................................................................................................ 205.12ms DONE
+  0001_01_01_000017_create_document_tags_table ....................................................................................... 695.39ms DONE
+  0001_01_01_000018_create_routing_records_table ........................................................................................... 1s DONE
+  0001_01_01_000019_create_audit_logs_table .......................................................................................... 692.16ms DONE
+  0001_01_01_000020_create_notifications_table ....................................................................................... 953.14ms DONE
+  0001_01_01_000021_create_external_submissions_table ...................................................................................... 2s DONE
+  0001_01_01_000022_create_submission_status_logs_table .................................................................................... 1s DONE
+  2026_08_11_000001_create_submission_views_table .................................................................................... 676.46ms DONE
+  2026_08_12_115423_add_ip_address_to_audit_logs_table ............................................................................... 212.21ms DONE
+  2026_08_15_000000_create_document_versions_table ......................................................................................... 1s DONE
+  2026_08_18_090000_add_contact_email_to_documents_table ............................................................................. 385.29ms DONE
+  2026_08_19_135029_create_colleges_table ............................................................................................ 162.43ms DONE
+  2026_08_19_135127_add_sender_college_id_to_documents_table ......................................................................... 929.65ms DONE
+  2026_08_20_004349_widen_audit_logs_action_column ................................................................................... 294.06ms DONE
+  2026_08_21_133005_add_deleted_at_to_documents_table ................................................................................ 458.59ms DONE
+  2026_08_23_222904_drop_timestamps_from_directions_table ............................................................................ 184.76ms DONE
+  2026_08_23_224134_drop_physical_location_from_documents_table ...................................................................... 383.17ms DONE
+  2026_08_23_225643_drop_timestamps_from_document_tags_table ......................................................................... 233.48ms DONE
+  2026_08_23_231633_drop_updated_at_from_document_versions_table ..................................................................... 244.57ms DONE
+  2026_08_23_234039_drop_updated_at_from_files_table ................................................................................. 194.85ms DONE
+  2026_08_23_235330_drop_timestamps_from_notification_statuses_table ................................................................. 202.62ms DONE
+  2026_08_23_235906_drop_timestamps_from_roles_table ................................................................................. 228.60ms DONE
+  2026_08_24_002059_remove_moot_status_and_drop_routing_statuses_timestamps .......................................................... 210.76ms DONE
+  2026_08_24_003028_drop_timestamps_from_submission_statuses_table ................................................................... 202.89ms DONE
+  2026_08_24_003437_drop_timestamps_from_user_statuses_table ......................................................................... 193.79ms DONE
+  2026_08_25_203005_add_google_sso_fields_to_users_table ................................................................................... 1s DONE
+  2026_08_26_000001_create_external_submission_files_table ........................................................................... 745.33ms DONE
+  2026_08_26_000002_create_document_files_table ...................................................................................... 841.71ms DONE
+  2026_08_26_000003_add_file_group_to_versions ....................................................................................... 657.47ms DONE
+  2026_08_27_084340_add_selected_files_column_to_routing_records ..................................................................... 241.54ms DONE
+  2026_08_30_001729_change_recipient_and_email_to_text_in_documents_table ............................................................ 998.00ms DONE
+  2026_09_01_002745_add_action_remarks_to_routing_records_table ...................................................................... 240.00ms DONE
+  2026_09_01_003642_add_sender_and_action_users_to_routing_records_table ................................................................... 1s DONE
+  2026_09_03_092016_create_routing_record_files_table ................................................................................ 731.89ms DONE
+  2026_09_03_092202_drop_selected_files_from_routing_records ......................................................................... 281.49ms DONE
+  2026_09_03_101453_add_receiver_remarks_to_routing_records .......................................................................... 290.05ms DONE
+  2026_09_08_012139_add_recipient_college_id_to_documents_table ...................................................................... 957.53ms DONE
+  2026_09_09_000001_add_recipient_college_text_to_documents_table .................................................................... 459.92ms DONE
+  2026_09_14_000001_drop_color_hex_from_categories_table ............................................................................. 209.40ms DONE
+  2026_09_15_000001_fix_college_id_type_on_submitters_table ................................................................................ 1s DONE
+  2026_09_15_082612_change_date_received_to_datetime_in_documents_table .............................................................. 628.18ms DONE
+  2026_09_22_000001_add_sender_college_text_to_documents_table ....................................................................... 481.08ms DONE
+  2026_09_22_000002_add_college_text_to_submitters_table ............................................................................. 244.44ms DONE
+  2026_09_23_000001_create_document_parties_tables ......................................................................................... 2s DONE
+  2026_09_23_000002_add_routing_records_recipient_label_check ........................................................................ 819.07ms DONE
+  2026_09_23_000003_unify_routing_remarks ............................................................................................ 267.96ms DONE
+  2026_09_23_000004_remove_soft_deletes_from_documents ............................................................................... 354.53ms DONE
+
+
+   INFO  Seeding database.  
+
+  Database\Seeders\LookupDataSeeder ........................................................................................................ RUNNING  
+  Database\Seeders\LookupDataSeeder .................................................................................................... 123 ms DONE  
+
+  Database\Seeders\CategorySeeder .......................................................................................................... RUNNING  
+  Database\Seeders\CategorySeeder ...................................................................................................... 306 ms DONE  
+
+  Database\Seeders\CollegeSeeder ........................................................................................................... RUNNING  
+  Database\Seeders\CollegeSeeder ....................................................................................................... 367 ms DONE  
+
+  Database\Seeders\PositionSeeder .......................................................................................................... RUNNING  
+  Database\Seeders\PositionSeeder ...................................................................................................... 165 ms DONE  
+
+
+   INFO  The [public/storage] link has been connected to [storage/app/public].  
+
+
+   INFO  Configuration cached successfully.  
+
+      Laravel configuration completed.
+[6/7] Applying least-privilege permissions...
+      Apache and directory permissions configured.
+[7/7] Verifying application response...
+
+==========================================================
+  INSTALLATION SUCCESSFUL!
+  HTTP Status : 200
+  App Location: http://localhost
+==========================================================

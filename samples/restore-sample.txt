@@ -1,0 +1,35 @@
+==========================================================
+  iGADit — Disaster Recovery & System Restore
+  IT 123 Final Project | Option 1A
+==========================================================
+
+[1/5] Scanning for available backups in /var/backups/igadit...
+Available backup snapshots:
+  [0] 2026-11-12_20-31-14 (72K)
+  [1] 2026-11-12_21-00-56 (76K)
+  [2] 2026-11-19_23-14-07 (92K)
+
+Selected backup: /var/backups/igadit/2026-11-19_23-14-07
+  SQL Dump     : igadit_db_2026-11-19_23-14-07.sql
+  File Archive : igadit_files_2026-11-19_23-14-07.tar.gz
+
+
+[2/5] Restoring MySQL database 'igadit'...
+      Database restored from SQL dump.
+[3/5] Restoring storage and application files...
+      Filesystem data verification: PASSED (Restored files match backup archive).
+      .env configuration restored.
+[4/5] Normalizing ownership and permissions...
+      Apache restarted.
+[5/5] Verifying restore integrity and application state...
+      Database tables in backup : 34
+      Restored database tables  : 34
+      [MATCH] Database table count matches backup schema perfectly.
+      Restore elapsed time      : 32 second(s)
+      Recovery threshold check  : PASSED (< 10-minute disaster recovery SLA)
+      Application HTTP status   : 200
+
+==========================================================
+  RESTORE SUCCESSFUL! Restored in 34s (Under 10-min SLA limit).
+  HTTP Status : 200
+==========================================================

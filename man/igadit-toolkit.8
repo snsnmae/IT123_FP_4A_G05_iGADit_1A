@@ -1,0 +1,152 @@
+.TH IGADIT-TOOLKIT 8 "2026" "Group 5" "iGADit Administration"
+.SH NAME
+igadit-toolkit \- administration and operational toolkit for the iGADit GAD document management system
+.SH SYNOPSIS
+.B sudo ./igadit-install.sh
+[\-\-help] [SOURCE_PATH]
+.br
+.B sudo ./igadit-backup.sh
+[\-\-help] [DESTINATION_DIR]
+.br
+.B sudo ./igadit-restore.sh
+[\-\-help] [BACKUP_PATH]
+.br
+.B sudo ./igadit-log-summary.sh
+[\-\-help] [OUTPUT_DIR]
+.br
+.B sudo ./igadit-health-report.sh
+[\-\-help]
+.br
+.B sudo ./igadit-disk-alert.sh
+[\-\-help] [THRESHOLD_PERCENT]
+.SH DESCRIPTION
+The iGADit toolkit comprises six production-grade Bash administration scripts
+tailored for the iGADit Document Tracking and Routing System at the Bicol
+University Gender and Development (GAD) Office.
+The suite automates server provisioning, backup verification, point-in-time
+disaster recovery, system and application log aggregation, multi-subsystem
+health checks, and proactive storage threshold alerting.
+All operational credentials and environment parameters are loaded from an
+access-restricted configuration file (/etc/igadit/igadit.conf) governed by
+strict file permission masks (0600).
+.SH COMMANDS
+.TP
+.B igadit-install.sh [\-\-help] [SOURCE_PATH]
+Deploys the Apache2 web server, PHP 8.2 runtime modules, and MySQL database
+platform on a clean Ubuntu Server 24.04 LTS host. Deploys the application
+repository, builds the virtual host, generates database schemas, executes
+Laravel database migrations, and enforces least-privilege permission masks
+across application storage and cache paths.
+.TP
+.B igadit-backup.sh [\-\-help] [DESTINATION_DIR]
+Generates a timestamped backup containing a consistent MySQL database dump
+produced via mysqldump, archived alongside the Laravel storage/ tree and environment
+configuration file into a unified compressed archive. Verifies archive integrity
+and contents using tar inspection routines before reporting success.
+.TP
+.B igadit-restore.sh [\-\-help] [BACKUP_PATH]
+Performs point-in-time disaster recovery by recreating the MySQL schema from an
+exported dump, unpacking verified filesystem storage trees, comparing restored
+files against the archive via tar -d, normalizing web daemon ownership to www-data,
+verifying that restored database table counts match the backup dump, and validating
+availability via HTTP status checks within a 10-minute SLA window.
+.TP
+.B igadit-log-summary.sh [\-\-help] [OUTPUT_DIR]
+Parses Apache HTTP access and error logs alongside Laravel storage logs.
+Compiles request totals, HTTP client/server error counts, top accessed
+URI endpoints, top requesting remote hosts, and recent application exceptions
+into a dated report file.
+.TP
+.B igadit-health-report.sh [\-\-help]
+Conducts comprehensive diagnostic assessments across Apache2 and MySQL systemd
+service units, disk partition capacity via df, memory allocation via free,
+CPU load averages, and HTTP service availability.
+.TP
+.B igadit-disk-alert.sh [\-\-help] [THRESHOLD_PERCENT]
+Evaluates storage partition utilization against a warning threshold (default 80%).
+Emits prominent visual terminal warnings, appends timestamps to the system alert log,
+lists the top storage-consuming application directories and files, and exits
+with status 3 if any threshold is violated.
+.SH EXAMPLES
+.TP
+Deploy platform and application on a fresh host:
+.B sudo ./igadit-install.sh
+.TP
+Create a verified database and filesystem backup:
+.B sudo ./igadit-backup.sh
+.TP
+Perform interactive system disaster recovery:
+.B sudo ./igadit-restore.sh
+.TP
+Generate an administrative log analysis report:
+.B sudo ./igadit-log-summary.sh /var/log/reports
+.TP
+Execute a full server operational health audit:
+.B sudo ./igadit-health-report.sh
+.TP
+Monitor partition capacity with a custom 85% threshold:
+.B sudo ./igadit-disk-alert.sh 85
+.SH FILES
+.TP
+.I /etc/igadit/igadit.conf
+Global operational configuration file containing database credentials,
+paths, and threshold limits. Owned by root:root with mode 0600.
+.TP
+.I /var/www/html/igadit/
+Root application directory for the deployed Laravel codebase.
+.TP
+.I /var/www/html/igadit/storage/
+Application document storage and log path. Owned by www-data:www-data.
+.TP
+.I /var/backups/igadit/
+Default archive repository containing timestamped database and file snapshots.
+.TP
+.I /var/log/apache2/
+Apache HTTP server access and error logs.
+.TP
+.I /var/www/html/igadit/storage/logs/laravel.log
+Application diagnostic and exception error log.
+.TP
+.I /var/log/igadit-disk-alert.log
+Append-only log recording threshold alert events.
+.TP
+.I /var/log/igadit-reports/
+Default output repository for log summary reports.
+.SH EXIT STATUS
+.TP
+.B 0
+Success. Operation completed without errors.
+.TP
+.B 1
+Privilege check failed (root privileges required).
+.TP
+.B 2
+Configuration file (/etc/igadit/igadit.conf) not found.
+.TP
+.B 3
+Execution failure, resource warning, or threshold exceeded.
+.TP
+.B 4
+Invalid command-line argument or user cancellation.
+.TP
+.B 5
+Restoration or database operational failure.
+.SH AUTHORS
+Orillana, Angel A. (Project Lead)
+.br
+Bataller, Kristine Mae B. (System Administrator)
+.br
+Avila, Clarissa A. (Documentation & Presentation Lead)
+.br
+Bicol University College of Science, Department of Information Technology.
+.SH SEE ALSO
+.BR tar (1),
+.BR df (1),
+.BR free (1),
+.BR mysqldump (1),
+.BR mysql (1),
+.BR systemctl (1),
+.BR chmod (1),
+.BR chown (1),
+.BR grep (1),
+.BR awk (1)

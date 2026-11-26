@@ -1,0 +1,22 @@
+==========================================================
+  iGADit — Application & Database Backup
+  IT 123 Final Project | Option 1A
+  Timestamp: 2026-11-19_23-14-07
+==========================================================
+
+[1/4] Preparing backup target directory...
+      Target directory: /var/backups/igadit/2026-11-19_23-14-07
+[2/4] Exporting MySQL database 'igadit'...
+      mysqldump completed successfully.
+[3/4] Archiving Laravel storage and configuration...
+      Tarball created: /var/backups/igadit/2026-11-19_23-14-07/igadit_files_2026-11-19_23-14-07.tar.gz
+[4/4] Verifying backup archive integrity...
+      Archive verification: PASSED (storage/, .env, and SQL dump detected).
+
+==========================================================
+  BACKUP COMPLETED & VERIFIED
+  Location: /var/backups/igadit/2026-11-19_23-14-07
+----------------------------------------------------------
+  igadit_db_2026-11-19_23-14-07.sql   60K
+  igadit_files_2026-11-19_23-14-07.tar.gz 24K
+==========================================================

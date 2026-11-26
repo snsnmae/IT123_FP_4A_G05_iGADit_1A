@@ -1,0 +1,35 @@
+==========================================================
+  iGADit — Server Health & Service Status Report
+  IT 123 Final Project | Option 1A
+  Generated: Thu Nov 19 11:11:58 PM UTC 2026
+==========================================================
+
+--- Core Services Status ---
+  [OK]   Service 'apache2' is ACTIVE (running).
+  [OK]   Service 'mysql' is ACTIVE (running).
+
+--- Storage & Disk Partitions (df -h) ---
+  Filesystem               Size   Used  Avail   Use% Mounted
+  /dev/sda2                 25G   3.8G    20G    17% /
+  [OK]   Root partition usage is normal: 17%
+
+--- Memory & Swap Usage (free -h) ---
+  Physical RAM : 3.8Gi total | 778Mi used | 2.9Gi free | 428Mi cached
+  Swap Space   : 0B total | 0B used | 0B free
+  [OK]   RAM utilization normal: 20%
+
+--- Processor & CPU Load ---
+  CPU Cores       : 2
+  1-Min Load Avg  : 0.01
+  System Uptime   : up 9 minutes
+
+--- Application Endpoint Check ---
+  [OK]   iGADit web app returned HTTP 200 (OK/Redirect).
+
+--- Human Accounts with Interactive Shells (/etc/passwd) ---
+  UID: 0     User: root
+  UID: 1000  User: igadit
+
+==========================================================
+  OVERALL SYSTEM STATUS: HEALTHY (All checks passed)
+==========================================================

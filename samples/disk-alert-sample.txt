@@ -1,0 +1,29 @@
+==========================================================
+  iGADit — Disk Utilization & Threshold Monitor
+  IT 123 Final Project | Option 1A
+  Threshold : 80%
+  Timestamp : 2026-11-19 23:09:41
+==========================================================
+
+--- Partition Status (df -h) ---
+  Filesystem                  Size   Used  Avail    Use%  Mounted on
+  ------------------------------------------------------------------
+  /dev/sda2                    25G   3.8G    20G     17%  /
+
+--- Top 5 Largest Directories in /var/www/html/igadit ---
+      128M  /var/www/html/igadit/vendor/
+      4.4M  /var/www/html/igadit/public/
+      1.1M  /var/www/html/igadit/resources/
+      648K  /var/www/html/igadit/app/
+      308K  /var/www/html/igadit/database/
+
+--- Top 5 Largest Files in /var/www/html/igadit/storage ---
+       40K  /var/www/html/igadit/storage/logs/laravel.log
+       16K  /var/www/html/igadit/storage/framework/views/33def2575b9cfde04d2d38677330a53f.php
+      8.0K  /var/www/html/igadit/storage/framework/views/e77f8a9db602c9f4ee3a1d8d1eb6ef07.php
+      8.0K  /var/www/html/igadit/storage/framework/views/b02880d49428a60f3037e47bec5dce5e.php
+      8.0K  /var/www/html/igadit/storage/framework/views/5cacf69a304df1ff778b6b861046e5ae.php
+
+==========================================================
+  STATUS: ALL NORMAL (All partitions below 80%)
+==========================================================
